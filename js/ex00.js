@@ -1,5 +1,7 @@
 function escolhas() {
-    var selecionado = document.querySelector('input[name="opcao"]:checked');
+    var selecionado = document.querySelector('input[name="opcao"]:checked')
+    label = document.getElementByName("label")
+    label = ""
 } 
 
 function adicionar() {
@@ -16,6 +18,7 @@ function adicionar() {
         var mostrar = add.children.length % cores.length
         novo.style.color = cores[mostrar]
         add.appendChild(novo)
+        
     }
 
     if (urgente == true){
@@ -35,8 +38,11 @@ function remover() {
         boxUrgente.removeChild(boxUrgente.lastElementChild)
     } else if (boxNaoUrgente.lastElementChild) {
         boxNaoUrgente.removeChild(boxNaoUrgente.lastElementChild)
+    }else{
+        alert("Não há mais notas para remover.")
     }
-}
+    }
+
 
 function apagartudo() {
     var urgente = document.getElementById("boxUrgente")
@@ -45,6 +51,8 @@ function apagartudo() {
     if(urgente || naoUrgente) {
         urgente.remove()
         naoUrgente.remove()
+    }else{
+        alert("Não há mais notas para apagar.")
     }
 }
   
